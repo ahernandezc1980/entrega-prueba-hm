@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WAHM.Models.PERSONAS>
+
+@{
+    ViewBag.Title = "PERSONAS";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PRIMER_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEGUNDO_NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRIMER_APELLIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEGUNDO_APELLIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_IDENTIFICACION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDENTIFICACION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NO_CELULAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIRECCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CORREO_ELECTRONICO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIMER_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEGUNDO_NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIMER_APELLIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEGUNDO_APELLIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_IDENTIFICACION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDENTIFICACION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NO_CELULAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIRECCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CORREO_ELECTRONICO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PERSONA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PERSONA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PERSONA })
+        </td>
+    </tr>
+}
+
+</table>
